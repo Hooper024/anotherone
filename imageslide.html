@@ -22,7 +22,19 @@
       object-fit: cover;
       opacity: 0;
       transition: opacity 1.5s ease-in-out;
+      min-width: 100vw;
+      height: 100vh;
+      background-size: contain;   /* 👈 fit whole image */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #000; 
+      background-size: cover; 
     }
+   
+  
+
+  
+    
     .active {
       opacity: 1;
     }
@@ -89,7 +101,7 @@
       <button class="btn" onclick="prevSlide()">❮</button>
       <button class="btn" onclick="nextSlide()">❯</button>
     </div>
-    <a href="trial1.html" class="back-btn">⬅ Back</a>
+    <a href="index.html" class="back-btn">⬅ Back</a>
   </div>
 
   <script>
@@ -122,3 +134,4 @@
   </script>
 </body>
 </html>
+
