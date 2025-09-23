@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doreen’s Birthday Slideshow</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    .slideshow {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .active {
+      opacity: 1;
+    }
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+    .btn {
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 10px 20px;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #7a0a2a;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .back-btn:hover {
+      background: #ffb6c1;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.19_103de8a0.jpg" class="slide active">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.23_2f4725c5.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.23_70f1bd25.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.28_47f73f6a.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.28_9971c7eb.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.29_3a737774.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.29_3c867f6f.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.29_84c7672b.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.29_243015b2.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.30_3dc3bb76.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.30_25e86c7c.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.30_b690a38a.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.30_f427d86b.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.31_1d5103b5.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.31_637ef507.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.31_beee05b9.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.31_f86518ca.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.32_fe04d2f0.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.33_2de13c3a.jpg" class="slide">
+    <img src="Imagez/WhatsApp Image 2025-09-22 at 23.30.34_be636e8f.jpg" class="slide">
+    <!-- Add more images here -->
+
+    <div class="controls">
+      <button class="btn" onclick="prevSlide()">❮</button>
+      <button class="btn" onclick="nextSlide()">❯</button>
+    </div>
+    <a href="trial1.html" class="back-btn">⬅ Back</a>
+  </div>
+
+  <script>
+    window.onload = function() {
+      const slides = document.querySelectorAll('.slide');
+      let current = 0;
+
+      function showSlide(index) {
+        slides.forEach((s, i) => {
+          s.classList.remove('active');
+          if (i === index) s.classList.add('active');
+        });
+      }
+
+      window.nextSlide = function() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }
+
+      window.prevSlide = function() {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+      }
+
+      // Auto-slide every 4 seconds
+      setInterval(() => {
+        nextSlide();
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
