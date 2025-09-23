@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Doreen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+      color: #e6e6e6;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      box-shadow: 0 0 30px rgba(255,182,193,0.3);
+    }
+    h1 {
+      font-size: 3rem;
+      color: #ffb6c1;
+      margin-bottom: 15px;
+    }
+    .btn {
+      margin-top: 20px;
+      background: #7a0a2a;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
+      border: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: #ffb6c1;
+      color: #000;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      display: none;
+      animation: fadeIn 1.5s forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎂 Happy Birthday, Doreen 🎂</h1>
+    <button class="btn" onclick="revealMessage()">Unveil the Mystery</button>
+    <p class="message" id="hiddenMsg">
+      On this special day, I wish you endless laughter, unshakable joy, and a love that warms you like the sun even on the coldest nights.  
+      You are more radiant than the stars, more timeless than the moon, and more unforgettable than any melody.  
+      Today is not just your birthday, it’s the celebration of *you* — a rare soul who makes the world softer, brighter, and infinitely better. 💖
+    </p>
+    <br>
+    <a href="imageslide.html" class="btn">Step into the Memories ✨</a>
+  </div>
+
+  <script>
+    function revealMessage() {
+      document.getElementById("hiddenMsg").style.display = "block";
+    }
+  </script>
+</body>
+</html>
