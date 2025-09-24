@@ -24,12 +24,10 @@
       height: 100vh;
       background-size: contain;   /* 👈 fit whole image */
       background-repeat: no-repeat;
-      background-position: center;
+      position: absolute;
       background-color: #000; 
       flex-shrink: 0;
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
       
     }
    
@@ -131,11 +129,12 @@
       // Auto-slide every 4 seconds
       setInterval(() => {
         nextSlide();
-      }, 2000);
+      }, 4000);
     }
   </script>
 </body>
 </html>
+
 
 
 
